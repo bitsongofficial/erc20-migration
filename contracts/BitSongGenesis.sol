@@ -1,5 +1,8 @@
 pragma solidity ^0.7.4;
 
+import "../node_modules/@openzeppelin/contracts/utils/Pausable.sol";
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+
 abstract contract ERC20Token {
     string public name;
     string public symbol;
@@ -15,8 +18,7 @@ abstract contract ERC20Token {
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 }
 
-contract BitSongGenesis {
-
+contract BitSongGenesis is Pausable, Ownable {
     event hasBeenAdded(
         address sender,
         address recipient,
@@ -36,9 +38,31 @@ contract BitSongGenesis {
     function deposit(
         uint256 amount,
         string memory target
-    ) public {
+    ) public whenNotPaused {
         ERC20Token token = ERC20Token(btsgErc20ContractAddress);
         require(token.transferFrom(msg.sender, bridgeWalletAddress, amount), "ERC20 token transfer was unsuccessful");
         emit hasBeenAdded(msg.sender, bridgeWalletAddress, target, amount, btsgErc20ContractAddress);
+    }
+
+    /**
+     * @dev Triggers stopped state.
+     *
+     * Requirements:
+     *
+     * - The contract must not be paused.
+     */
+    function pause() public onlyOwner {
+        _pause();
+    }
+
+    /**
+     * @dev Returns to normal state.
+     *
+     * Requirements:
+     *
+     * - The contract must be paused.
+     */
+    function unpause() public onlyOwner {
+        _unpause();
     }
 }

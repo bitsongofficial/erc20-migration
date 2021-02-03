@@ -1,0 +1,26 @@
+{
+  "name": "bitsong-erc20-migration",
+  "version": "1.0.0",
+  "description": "BitSong Genesis SmartContract",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitsongofficial/erc20-migration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitsongofficial/erc20-migration/issues"
+  },
+  "homepage": "https://github.com/bitsongofficial/erc20-migration#readme"
+}
