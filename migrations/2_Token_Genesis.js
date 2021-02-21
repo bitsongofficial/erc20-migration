@@ -8,7 +8,7 @@ module.exports = function (deployer) {
       return deployer.deploy(
         BitSongGenesis,
         BitSongToken.address,
-        "0x0000000000000000000000000000000000000000"
+        "0xec5E7751780936E57ccc127A148A269aA72adA22"
       );
     });
 };
