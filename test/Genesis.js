@@ -6,8 +6,8 @@ const truffleAssert = require("truffle-assertions");
 
 const BRIDGE_ADDRESS = "0xec5E7751780936E57ccc127A148A269aA72adA22";
 
-contract("BitSongGenesis", async (accounts) => {
-  it("should NOT deposit without approval", async () => {
+contract("BitSong Genesis Contract", async (accounts) => {
+  it("should not deposit without approval", async () => {
     let contract = await BitSongGenesis.deployed();
 
     var btsgAmount = web3.utils.toBN(10000);
