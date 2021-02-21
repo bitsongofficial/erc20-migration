@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: UNLICENSED
+
 /**
  * Submitted for verification at Etherscan.io on 2018-08-10
  * Only for reference purposes

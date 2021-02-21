@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: UNLICENSED
+
 pragma solidity ^0.7.4;
 
 import "../node_modules/@openzeppelin/contracts/utils/Pausable.sol";
